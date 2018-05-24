@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { installDependencies } = require('../lib/installer');
 const params = require('../lib/read-params')();
 const dependencies = require('../lib/read-dependencies')(params.manifest, params.groups);

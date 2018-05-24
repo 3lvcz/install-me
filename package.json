@@ -1,6 +1,6 @@
 {
   "name": "install-em",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeJS utility for dependency management.",
   "license": "MIT",
   "repository": "github:3lvcz/install-em",
@@ -9,6 +9,11 @@
   "author": "Beklov Evgeniy <beklowea@gmail.com>",
   "bin": "./bin/index.js",
   "main": "./index.js",
+  "files": [
+    "bin",
+    "lib",
+    "index.js"
+  ],
   "engines": {
     "node": "^8.9.1",
     "npm": "^5.5.1"
