@@ -1,0 +1,13 @@
+{
+  "name": "fixture",
+  "version": "0.0.1",
+  "dependencies": {
+    "dependency": "1.0.0"
+  },
+  "devDependencies": {
+    "tool": "latest"
+  },
+  "custom": {
+    "my-component": "^0.0.3-dev"
+  }
+}
