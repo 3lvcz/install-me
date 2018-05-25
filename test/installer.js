@@ -9,11 +9,10 @@ describe('installer', () => {
     describe('installDependencies', () => {
         afterEach(reset);
         it('should call `npm` properly', () => {
-            const promise = installDependencies([
+            installDependencies([
                 ['module1', '^1.2.3'],
                 ['module2', 'latest'],
             ], __dirname);
-            expect(promise).to.be.instanceOf(Promise);
             expect(exec.spy.calledOnce).to.equal(true);
 
             const { firstCall: { args: [cmd, opts] } } = exec.spy;
@@ -25,6 +24,10 @@ describe('installer', () => {
             expect(params).to.have.members(['--no-save', 'module1@^1.2.3', 'module2@latest']);
             // check opts
             expect(opts).to.have.property('cwd').which.equal(__dirname);
+        });
+        it('should not call `npm install`, if no dependencies were given', () => {
+            installDependencies([], __dirname);
+            expect(exec.spy.called).to.equal(false);
         });
     });
     describe('installDependency', () => {
