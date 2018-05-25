@@ -1,6 +1,6 @@
 {
   "name": "install-em",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "NodeJS utility for dependency management.",
   "license": "MIT",
   "repository": "github:3lvcz/install-em",

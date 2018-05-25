@@ -6,7 +6,8 @@ const params = require('../lib/read-params')();
 const dependencies = require('../lib/read-dependencies')(params.manifest, params.groups);
 
 function printMessage(msg) {
-    process.stdout.write(`${msg}\n`);
+    // eslint-disable-next-line no-console
+    console.log(msg);
 }
 
 if (!params.groups.length) {
@@ -26,6 +27,7 @@ printMessage(`into: "${join(params.target, 'node_modules')}"`);
 installDependencies(dependencies, params.target, { force: params.force })
     .then(() => printMessage('Done.'))
     .catch((e) => {
-        process.stderr.write(e.toString());
+        // eslint-disable-next-line no-console
+        console.error(e);
         process.exit(1);
     });
